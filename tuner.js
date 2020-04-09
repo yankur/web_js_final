@@ -1,6 +1,6 @@
 function tune(arr) {
     if (arr.length !== 6) { throw "Wrong size of frequencies array" }
-	const etalon = [329.63, 246.94, 196.00, 146.83, 110.00, 82.41];
+    const etalon = [329.63, 246.94, 196.00, 146.83, 110.00, 82.41];
     let zip = (el, et) => el.map((x, i) => [x, et[i]]);
     return (zip(arr, etalon).map((pair) => {return analyze(pair[0]/pair[1])}));
 }
